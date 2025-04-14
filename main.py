@@ -55,7 +55,7 @@ def check_translation(message, expected_translation, words_left):
 @bot.message_handler(commands=["addword"])
 def handle_addword(message):
     global user_data
-    chat_id = message.chat.id
+    chat_id = str(message.chat.id)
     user_dict = user_data.get(chat_id, {})
     
     words = message.text.split()[1:]
